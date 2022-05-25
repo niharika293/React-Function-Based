@@ -18,6 +18,7 @@ export default function Navbar(props) {
                 <a className="nav-link" href="/">About</a>
               </li>
             </ul>
+            {/* <button className="btn btn-outline-primary d-flex mx-5" type="button" onClick={toggleTheme}>Enable dark mode</button> */}
             <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               <button className="btn btn-outline-primary" type="submit">Search</button>
