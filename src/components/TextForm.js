@@ -82,10 +82,11 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div className='container'>
+    {/* 2 curly braces - 1 for javascript , 1 for object */}
+      <div className='container' style={{color : props.mode==='dark'?'white':'#042743'}}> 
         <h1>{props.heading}</h1>
         <div className="mb-3 my-3">
-          <textarea className="form-control" id="myBox" rows="8" value={text} onChange={handleChange}></textarea>
+          <textarea style={{backgroundColor : props.mode==='dark'?'grey':'white',color : props.mode==='dark'?'white':'#042743' }} className="form-control" id="myBox" rows="8" value={text} onChange={handleChange}></textarea>
         </div>
         <button className='btn btn-primary mx-1' onClick={handleUpClick}>Convert to Uppercase</button>
         <button className='btn btn-primary mx-1' onClick={handleLoClick}>Convert to Lowercase</button>
@@ -95,12 +96,12 @@ export default function TextForm(props) {
         <button className='btn btn-primary mx-1' onClick={handleAlternatingCase}>Alternating case</button>
         <button className='btn btn-primary mx-1' onClick={handleDownload}>Download Text</button>
       </div>
-      <div className="container my-3">
+      <div className="container my-3" style={{color : props.mode==='dark'?'white':'#042743'}}>
         <h3>Your Text Summary </h3>
         <p> <b> {totalWords} </b> words and <b> {text.length} </b> characters</p>
         <p>{0.08 * totalWords} minutes read</p>
         <h3>Preview</h3>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Enter some text in the textbox above to preview it here"}</p>
       </div>
     </>
   )
